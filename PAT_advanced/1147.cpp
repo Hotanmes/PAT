@@ -15,11 +15,11 @@ void postorder(int index)
 int main()
 {
 	int m;
-	int isMin = 1, isMax = 1;
 	scanf("%d%d", &m, &n);
-	v.resize(n+1);//注意v的大小为n+1
+	v.resize(n + 1);//注意v的大小为n+1
 	for (int i = 0; i < m; ++i)
 	{
+		int isMin = 1, isMax = 1;//注意应放在循环内
 		for (int j = 1; j <= n; ++j)//v下标从0到n,所以大小为n+1
 		{
 			scanf("%d", &v[j]);
@@ -41,7 +41,7 @@ int main()
 		}
 		else
 		{
-			printf("%s\n", isMin? "Min Heap" : "Not Heap");
+			printf("%s\n", isMin ? "Min Heap" : "Not Heap");
 		}
 		postorder(1);//传入的为1
 	}
